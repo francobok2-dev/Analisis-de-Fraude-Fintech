@@ -76,3 +76,10 @@ Incorporar nuevas reglas de negocio o un sistema de Risk Scoring para mejorar la
 Este proyecto permitió recorrer un flujo completo de análisis de datos, desde la limpieza y exploración hasta la construcción de visualizaciones e interpretación de resultados.
 
 Más allá del uso de SQL y Power BI, el principal aprendizaje fue comprender cómo transformar grandes volúmenes de datos en información útil para responder preguntas de negocio y apoyar la toma de decisiones basada en evidencia.
+
+## Dashboard:
+
+<img width="1113" height="623" alt="Captura de pantalla (607)" src="https://github.com/user-attachments/assets/fd502913-5c35-4462-bec2-efd725ceb0d9" />
+
+<img width="1091" height="603" alt="Captura de pantalla (608)" src="https://github.com/user-attachments/assets/813ba36b-e9ea-4bef-845b-870d9c51b0a4" />
+
