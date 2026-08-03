@@ -1,0 +1,70 @@
+Cantidad de Cuentas = DISTINCTCOUNT(view_accounts[nameOrig])
+
+Total de Transacciones = COUNTROWS(view_part_1)
+
+Fraude por Tipo = CALCULATE(COUNTROWS(view_part_2),view_part_2[isFraud] = TRUE())
+
+Monto Fraudes = CALCULATE(SUM(view_part_2[amount]), view_part_2[isFraud] = TRUE())
+
+Porc Fraude = 
+DIVIDE(CALCULATE(
+	COUNTROWS(view_part_2), 
+	view_part_2[isFraud] = TRUE()) * 100,  
+	CALCULATE(COUNTROWS(view_part_2)))
+
+
+Porcentaje Fraude = DIVIDE(
+	CALCULATE(COUNTROWS(view_part_2), 
+	view_part_2[isFraud] = TRUE()), 
+	CALCULATE(COUNTROWS(view_part_2)))
+
+
+Transacciones Fraudulentas = CALCULATE(COUNTROWS(view_part_2), view_part_2[isFraud] = TRUE())
+
+Fraudes Automáticos = 
+DIVIDE(
+    CALCULATE(
+        COUNTROWS(view_part_3),
+        view_part_3[isFlaggedFraud] = TRUE()
+    ),
+    CALCULATE(
+        COUNTROWS(view_part_3),
+        view_part_3[isFraud] = TRUE()
+    )
+)
+
+
+Cantidad Fraudes = CALCULATE(COUNTROWS(view_part_4), view_part_4[isFraud] = TRUE())
+
+
+Cuentas con Fraudes Repetidos = 
+COUNTROWS(
+    FILTER(
+        VALUES(view_part_4[nameDest]),
+        CALCULATE(COUNTROWS(view_part_4), view_part_4[isFraud] = TRUE()) > 1
+    )
+)
+
+
+Orden Rango = 
+SWITCH(
+    TRUE(),
+    view_part_4[amount] < 10000, 1,
+    view_part_4[amount] < 50000, 2,
+    view_part_4[amount] < 100000, 3,
+    view_part_4[amount] < 500000, 4,
+    view_part_4[amount] < 1000000, 5,
+    6
+)
+
+
+Rango Monto = 
+SWITCH(
+    TRUE(),
+    view_part_4[amount] < 10000, "0 - 10 mil",
+    view_part_4[amount] < 50000, "10 mil - 50 mil",
+    view_part_4[amount] < 100000, "50 mil - 100 mil",
+    view_part_4[amount] < 500000, "100 mil - 500 mil",
+    view_part_4[amount] < 1000000, "500 mil - 1 millón",
+    "Más de 1 millón"
+)
