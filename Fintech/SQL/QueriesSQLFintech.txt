@@ -1,0 +1,64 @@
+SELECT COUNT(*) AS Errores_Amount
+FROM dbo.transactions_raw
+WHERE TRY_CONVERT(decimal(18,2), amount) IS NULL;
+
+
+CREATE TABLE transactions (
+    step INT,
+    type VARCHAR(20),
+    amount DECIMAL(18,2),
+    nameOrig VARCHAR(20),
+    oldbalanceOrg DECIMAL(18,2),
+    newbalanceOrig DECIMAL(18,2),
+    nameDest VARCHAR(20),
+    oldbalanceDest DECIMAL(18,2),
+    newbalanceDest DECIMAL(18,2),
+    isFraud BIT,
+    isFlaggedFraud BIT
+);
+
+
+INSERT INTO transactions
+SELECT
+    TRY_CONVERT(INT, step),
+    type,
+    TRY_CONVERT(DECIMAL(18,2), TRY_CONVERT(FLOAT, amount)),
+    nameOrig,
+    TRY_CONVERT(DECIMAL(18,2), TRY_CONVERT(FLOAT, oldbalanceOrg)),
+    TRY_CONVERT(DECIMAL(18,2), TRY_CONVERT(FLOAT, newbalanceOrig)),
+    nameDest,
+    TRY_CONVERT(DECIMAL(18,2), TRY_CONVERT(FLOAT, oldbalanceDest)),
+    TRY_CONVERT(DECIMAL(18,2), TRY_CONVERT(FLOAT, newbalanceDest)),
+    TRY_CONVERT(BIT, isFraud),
+    TRY_CONVERT(BIT, isFlaggedFraud)
+FROM Transactions_raw;
+
+
+SELECT
+    COUNT(*) AS Total_Transacciones,
+    SUM(amount) AS Monto_Total,
+    AVG(amount) AS Ticket_Promedio,
+    SUM(CASE WHEN isFraud = 1 THEN amount ELSE 0 END) AS Monto_Fraudulento
+FROM transactions;
+
+
+SELECT
+    COUNT(*) AS Total_Transacciones,
+    SUM(CASE WHEN isFraud = 1 THEN 1 ELSE 0 END) AS Transacciones_Fraudulentas,
+    CAST(
+        SUM(CASE WHEN isFraud = 1 THEN 1 ELSE 0 END) * 100.0 
+        / COUNT(*) 
+    AS DECIMAL(5,2)) AS Porcentaje_Fraude
+FROM transactions;
+
+
+SELECT
+    type,
+    COUNT(*) AS Total,
+    SUM(CASE WHEN isFraud = 1 THEN 1 ELSE 0 END) AS Fraudes,
+    CAST(
+        SUM(CASE WHEN isFraud = 1 THEN 1 ELSE 0 END) * 100.0 / COUNT(*)
+    AS DECIMAL(5,2)) AS Tasa_Fraude
+FROM transactions
+GROUP BY type
+ORDER BY Tasa_Fraude DESC;
