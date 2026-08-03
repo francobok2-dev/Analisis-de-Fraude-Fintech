@@ -1,4 +1,4 @@
-# Analisis-de-Fraude-Fintech
+# Proyecto de Analisis de Datos: Transacciones Fraudulentas en una Fintech
 
 ## 📌 Descripción del proyecto
 
