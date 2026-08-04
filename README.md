@@ -19,7 +19,7 @@ A partir del análisis de un dataset de más de 6 millones de transacciones, se 
 - Power BI
 - DAX
 - Microsoft Excel
-- 
+  
 ## 📊 Proceso de trabajo
 1. Limpieza y preparación de datos
 Validación y corrección de tipos de datos.
