@@ -84,3 +84,4 @@ Más allá del uso de SQL y Power BI, el principal aprendizaje fue comprender c�
 
 <img width="1091" height="603" alt="Captura de pantalla (608)" src="https://github.com/user-attachments/assets/813ba36b-e9ea-4bef-845b-870d9c51b0a4" />
 
+Nota: Debido a las restricciones de tamaño de GitHub, el archivo .pbix no pudo incluirse en este repositorio. Sin embargo, se encuentran disponibles las consultas SQL, las medidas DAX y capturas del dashboard final.
