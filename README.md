@@ -18,7 +18,6 @@ A partir del análisis de un dataset de más de 6 millones de transacciones, se 
 - SQL Server
 - Power BI
 - DAX
-- Microsoft Excel
   
 ## 📊 Proceso de trabajo
 
