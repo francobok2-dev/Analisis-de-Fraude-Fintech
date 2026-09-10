@@ -23,39 +23,39 @@ A partir del análisis de un dataset de más de 6 millones de transacciones, se 
 ## 📊 Proceso de trabajo
 
 1. Limpieza y preparación de datos.
-Validación y corrección de tipos de datos.
-Exploración de valores atípicos.
-Revisión de inconsistencias.
-Preparación del dataset para el análisis.
+- Validación y corrección de tipos de datos.
+- Exploración de valores atípicos.
+- Revisión de inconsistencias.
+- Preparación del dataset para el análisis.
 
 3. Análisis Exploratorio (EDA)
 
 Mediante SQL Server se realizaron consultas para analizar:
 
-Distribución de los tipos de transacción.
-Montos promedio y totales.
-Frecuencia de fraude.
-Patrones por tipo de operación.
-Cuentas destino con fraude recurrente.
-Comportamiento del sistema automático de detección.
+- Distribución de los tipos de transacción.
+- Montos promedio y totales.
+- Frecuencia de fraude.
+- Patrones por tipo de operación.
+- Cuentas destino con fraude recurrente.
+- Comportamiento del sistema automático de detección.
 
 3. Dashboard en Power BI
 
 Se construyó un dashboard dividido en dos secciones:
 
-Análisis de Transacciones
-Total de transacciones.
-Monto total procesado.
-Monto promedio por operación.
-Distribución por tipo de transacción.
-Comparación de montos por categoría.
-Análisis de Fraude
-Cantidad de operaciones fraudulentas.
-Monto involucrado en fraude.
-Porcentaje de fraude.
-Efectividad del sistema automático de detección.
-Distribución de fraudes por tipo de operación.
-Distribución de fraudes por rango de monto.
+- Análisis de Transacciones
+- Total de transacciones.
+- Monto total procesado.
+- Monto promedio por operación.
+- Distribución por tipo de transacción.
+- Comparación de montos por categoría.
+- Análisis de Fraude
+- Cantidad de operaciones fraudulentas.
+- Monto involucrado en fraude.
+- Porcentaje de fraude.
+- Efectividad del sistema automático de detección.
+- Distribución de fraudes por tipo de operación.
+- Distribución de fraudes por rango de monto.
 
 ## 🔍 Principales hallazgos
 - El sistema automático detectó únicamente el 0,2% de los fraudes registrados.
@@ -67,10 +67,10 @@ Distribución de fraudes por rango de monto.
 
 A partir del análisis se propusieron distintas oportunidades de mejora:
 
-Reforzar los controles sobre operaciones TRANSFER y CASH_OUT.
-Aplicar controles adicionales para transacciones de alto valor.
-Monitorear las cuentas destino con fraude recurrente.
-Incorporar nuevas reglas de negocio o un sistema de Risk Scoring para mejorar la detección preventiva.
+- Reforzar los controles sobre operaciones TRANSFER y CASH_OUT.
+- Aplicar controles adicionales para transacciones de alto valor.
+- Monitorear las cuentas destino con fraude recurrente.
+- Incorporar nuevas reglas de negocio o un sistema de Risk Scoring para mejorar la detección preventiva.
 
 ## 📈 Conclusión
 
