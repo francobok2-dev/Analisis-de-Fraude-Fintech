@@ -22,7 +22,7 @@ A partir del análisis de un dataset de más de 6 millones de transacciones, se 
   
 ## 📊 Proceso de trabajo
 
-1. Limpieza y preparación de datos
+1. Limpieza y preparación de datos.
 Validación y corrección de tipos de datos.
 Exploración de valores atípicos.
 Revisión de inconsistencias.
